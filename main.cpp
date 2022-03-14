@@ -534,10 +534,10 @@ float arete[12][3]={
     {0.5,1.0,1.0},
     {1.0,0.5,1.0},
     {0.5,0.0,1.0},
-    {0.0,0.5,0.5},
-    {0.5,1.0,0.5},
-    {1.0,0.5,0.5},
-    {0.5,0.0,0.5},
+    {0.0,0.0,0.5},
+    {0.0,1.0,0.5},
+    {1.0,1.0,0.5},
+    {1.0,0.0,0.5},
 };
 
 point3D*** allocGrille(int size_x,int size_y, int size_z){
@@ -608,7 +608,7 @@ int calIndex(bool tab[8]){
 void genFichier(point3D ***Grille,int size_x,int size_y, int size_z){
     ofstream f;
     int cpt=0;
-    f.open("projetFinal2.obj",ios::out | ios::app);
+    f.open("projetFinal4.obj",ios::out | ios::app);
     f<<"g Object001"<<endl;
     for(int i=0 ;i<size_x -1;i++){
         for(int j=0;j<size_y-1 ;j++){
@@ -616,10 +616,10 @@ void genFichier(point3D ***Grille,int size_x,int size_y, int size_z){
                     bool voisin[8] = {
                         Grille[i][j][k].allume,
                         Grille[i][j+1][k].allume,
+                        Grille[i+1][j+1][k].allume,
                         Grille[i+1][j][k].allume,
                         Grille[i][j][k+1].allume,
-                        Grille[i+1][j][k].allume,
-                        Grille[i+1][j+1][k].allume,
+                        Grille[i][j+1][k+1].allume,
                         Grille[i+1][j+1][k+1].allume,
                         Grille[i+1][j][k+1].allume
                     };
