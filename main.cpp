@@ -608,7 +608,7 @@ int calIndex(bool tab[8]){
 void genFichier(point3D ***Grille,int size_x,int size_y, int size_z){
     ofstream f;
     int cpt=0;
-    f.open("projetFinal4.obj",ios::out | ios::app);
+    f.open("projetTableTest2.obj",ios::out | ios::app);
     f<<"g Object001"<<endl;
     for(int i=0 ;i<size_x -1;i++){
         for(int j=0;j<size_y-1 ;j++){
